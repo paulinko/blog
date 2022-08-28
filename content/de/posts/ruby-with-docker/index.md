@@ -21,7 +21,7 @@ Eine Docker-Umgebung zur Entwicklung hat viele Vorteile:
 
 1. Ruby Plugin installieren und neustarten: Öffne unter Datei > Projekteinstellungen und dann den Reiter Plugins. 
 Im marketplace nach dem Ruby-Plugin für IntelliJ suchen und es installieren, falls es noch nicht installiert ist. Dann die IDE neustarten. 
-![Plugin installieren](/images/000/plugin.png 'Plugin installieren')
+![Plugin installieren](images/plugin.png 'Plugin installieren')
 
 
 2. Unter File > New > New Project ein neues leeres Projekt erstellen. ![Plugin installieren](images/new-project.png 'Plugin installieren')
@@ -41,8 +41,8 @@ CMD sleep infinity
 
 
 4. Neue Dockerfile Config anlegen
-   ![img.png](/images/000/new-run-config.png)
-![img.png](/images/000/run-config.png)
+   ![img.png](images/new-run-config.png)
+![img.png](images/run-config.png)
 
 
 
