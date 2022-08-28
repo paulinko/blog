@@ -28,8 +28,8 @@ Im marketplace nach dem Ruby-Plugin für IntelliJ suchen und es installieren, fa
 
 
 
-3. Im leeren Projekt ein Verzeichnis `src` und die `Dockerfile` anlegen: ![img.png](images/structure.png) In das `src` Verzeichnis kommt später die eigentliche Anwendung, in das Wurzelverzeichnis Dateien zur Provisionierung wie die Dockerfile und alles andere, was nicht Teil im Container erreichbar sein sollte.
-Zum Aufsetzen des Projektes nutze ich meist eine Dockerfile, die ungefähr so aussieht: 
+3. Im leeren Projekt ein Verzeichnis `src` und die `Dockerfile` anlegen: ![img.png](images/structure.png) In das `src` Verzeichnis kommt später die eigentliche Anwendung, in das Wurzelverzeichnis Dateien zur Provisionierung wie die Dockerfile und alles andere, was nicht Teil vom Container sein sollte.
+Zum Aufsetzen des Projektes nutze ich meist eine Dockerfile, die so aussieht:
 ```dockerfile
 FROM ruby:3.0
 
@@ -38,7 +38,6 @@ WORKDIR /app
 
 CMD sleep infinity
 ```
-
 
 4. Neue Dockerfile Config anlegen
    ![img.png](images/new-run-config.png)
