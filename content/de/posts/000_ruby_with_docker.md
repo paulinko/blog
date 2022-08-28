@@ -24,11 +24,11 @@ Im marketplace nach dem Ruby-Plugin für IntelliJ suchen und es installieren, fa
 ![Plugin installieren](/images/000/plugin.png 'Plugin installieren')
 
 
-2. Unter File > New > New Project ein neues leeres Projekt erstellen. ![Plugin installieren](/images/000/new-project.png 'Plugin installieren')
+2. Unter File > New > New Project ein neues leeres Projekt erstellen. ![Plugin installieren](images/new-project.png 'Plugin installieren')
 
 
 
-3. Im leeren Projekt ein Verzeichnis `src` und die `Dockerfile` anlegen: ![img.png](/images/000/structure.png) In das `src` Verzeichnis kommt später die eigentliche Anwendung, in das Wurzelverzeichnis Dateien zur Provisionierung wie die Dockerfile und alles andere, was nicht Teil im Container erreichbar sein sollte.
+3. Im leeren Projekt ein Verzeichnis `src` und die `Dockerfile` anlegen: ![img.png](images/structure.png) In das `src` Verzeichnis kommt später die eigentliche Anwendung, in das Wurzelverzeichnis Dateien zur Provisionierung wie die Dockerfile und alles andere, was nicht Teil im Container erreichbar sein sollte.
 Zum Aufsetzen des Projektes nutze ich meist eine Dockerfile, die ungefähr so aussieht: 
 ```dockerfile
 FROM ruby:3.0
@@ -46,20 +46,20 @@ CMD sleep infinity
 
 
 
-5. Jetzt kann die neue Config ausgeführt werden.  ![img.png](/images/000/exec-config.png)
+5. Jetzt kann die neue Config ausgeführt werden.  ![img.png](images/exec-config.png)
 Im Tab Services von IntelliJ taucht jetzt unser neuer Container auf. Wir haben als Command `sleep infinty` gewählt, damit wir jetzt Zeit haben, unser Projekt zu konfigurieren.
 
 
 
 6. Um unser Projekt zu initialisieren, führen wir die Bash im Container aus. Dafür Rechtsklick auf den Container, Exec > Create and Run. Wir legen das Kommando `/bin/bash` an:
-![img.png](/images/000/command.png)
+![img.png](images/command.png)
 
    
 7. Jetzt können wir unser Projekt mit unserem ruby im container initialisieren. Zum Beispiel für eine Rails Anwendung führen wir 
 `gem install rails && rails new .` aus
-   ![rails.png](/images/000/rails.png)
+   ![rails.png](images/rails.png)
 Damit wird eine Rails Anwendung im Volume`/app`initialisiert. Da der Ordner src aus dem Hostsystem nach /app gemountet wurde, können wir jetzt auch die Dateien im Hostsystem sehen:
-   ![rails.png](/images/000/dateisystem.png)
+   ![rails.png](images/dateisystem.png)
 Die im Docker-Container generierten Dateien gehören dem Nutzer, der den dockerd ausführt. Deshalb muss der Besitzer auf den eigenen Nutzer geändert werden:
 `sudo chown -R $(whoami):$(whoami) src `
 
@@ -82,16 +82,16 @@ WORKDIR /app
 CMD rails server -b 0.0.0.0
 ```
 Wenn wir auf Ports zugreifen wollen, müssen wir die IntelliJ Run-Config so anpassen, dass die Ports gepublished werden:
-![SDK Konfiguration](/images/000/ports.png)
+![SDK Konfiguration](images/ports.png)
 9. Jetzt führen wir das geänderte Docker noch mal über die IntelliJ run Konfiguration aus. Das sorgt dafür, dass das Image eu gebaut wird und der Container gestartet wird.
 
 
 
 10. Danach können wir unter "Project structure" unser Ruby SDK im Docker Container konfigurieren. Dafür öffnen wir File > Project Structure >Project.
 Im Feld SDK wählen wir Add SDK > Ruby SDK.
-    ![SDK Konfiguration](/images/000/SDK.png)
+    ![SDK Konfiguration](images/SDK.png)
 Jetzt können wir ein Remote Interpreter or Version Manager hinzufügen. Dafür wählen wir den Reiter Docker und stellen sicher, dass unser Image ausgewählt ist:
-    ![remote interpreter configuration](/images/000/add-remote-interpreter.png)
+    ![remote interpreter configuration](images/add-remote-interpreter.png)
 Möglicherweise muss man IntelliJ jetzt neustarten.
 
 
