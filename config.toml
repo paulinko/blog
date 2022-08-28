@@ -1,0 +1,33 @@
+baseURL = "https://example.com"
+languageCode = "en-us"
+title = "paulinko blog"
+theme = "yinyang"
+DefaultContentLanguage = "de"
+
+[author]
+  name = "paulinko"
+  name_ascii = " ⣀⡀ ⢀⣀ ⡀⢀ ⡇ ⠄ ⣀⡀ ⡇⡠ ⢀⡀<br>⡧⠜ ⠣⠼ ⠣⠼ ⠣ ⠇ ⠇⠸ ⠏⠢ ⠣⠜"
+  homepage = "https://github.com/paulinko"
+
+[languages]
+  [languages.de]
+    contentDir = "content/de"
+    languageName = "German"
+    weight = 1
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 1
+
+[params]
+# disqus = "joway" # disqus account name
+extraHead = ''
+mainSections = ["posts"]
+
+[[params.socials]]
+name = "RSS"
+link = "/index.xml"
+
+[[params.socials]]
+name = "About"
+link = "about"
