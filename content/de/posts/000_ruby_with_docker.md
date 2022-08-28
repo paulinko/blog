@@ -11,7 +11,7 @@ Eine Docker-Umgebung zur Entwicklung hat viele Vorteile:
 - geringeres Sicherheitsrisiko, da der Container nur Zugriff auf einziges Verzeichnis hat
 - bessere Reproduzierbarkeit der Umgebung
 
-### Voraussetzugen
+### Voraussetzungen
 
 - IntelliJ Pro
 - [docker](https://docs.docker.com/engine/install/)
@@ -29,7 +29,7 @@ Im marketplace nach dem Ruby-Plugin für IntelliJ suchen und es installieren, fa
 
 
 3. Im leeren Projekt ein Verzeichnis `src` und die `Dockerfile` anlegen: ![img.png](./images/000/structure.png) In das `src` Verzeichnis kommt später die eigentliche Anwendung, in das Wurzelverzeichnis Dateien zur Provisionierung wie die Dockerfile und alles andere, was nicht Teil im Container erreichbar sein sollte.
-Zum Aufsetzen des Projektes nutze ich meist eine Dockerfile, die unefähr so aussieht: 
+Zum Aufsetzen des Projektes nutze ich meist eine Dockerfile, die ungefähr so aussieht: 
 ```dockerfile
 FROM ruby:3.0
 
@@ -82,7 +82,7 @@ WORKDIR /app
 CMD rails server -b 0.0.0.0
 ```
 Wenn wir auf Ports zugreifen wollen, müssen wir die IntelliJ Run-Config so anpassen, dass die Ports gepublished werden:
-![SDK Konfiguration](/images/000/ports.png)
+![SDK Konfiguration](./images/000/ports.png)
 9. Jetzt führen wir das geänderte Docker noch mal über die IntelliJ run Konfiguration aus. Das sorgt dafür, dass das Image eu gebaut wird und der Container gestartet wird.
 
 
